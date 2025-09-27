@@ -1,70 +1,27 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. npx create-react-app react_study 로 프로젝트 생성. [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+2. 구조 설명
+    - index.js 를 메인페이지로 동작함. 여러가지 전역적 설정이 들어감.
+    - App.js 가 import되어 구성됨. UI 구성.
+    - index.css, app.css => 초기 디자인페이지. 
+    - id="root" 대상 위치는 /public/index.html 에 있다.
 
-In the project directory, you can run:
+3. 배포 
+    - npm run build : /build 에 빌드된 파일 생성.
+    - npx serve -s build : 빌드된 index.html 로 서비스한다. 
+    - npm start : 개발환경을 위한 실행.
 
-### `npm start`
+4. 컴포넌트 구성
+    - class 와 function 구성. 여기선 function으로.
+    - 각 관심 tag를 function 단위로 쪼갠다 => custom tag = component
+    - component tag는 대문자로 시작한다. 소문자는 html tag.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5. useState 활용. 
+    - 해당 컴포넌트내에서 state 활용 필요
+    - 전역적으로 활용되는건         
+        작거나 중간 규모의 애플리케이션, 또는 간단한 전역 상태 공유: Context API + useReducer
+        대규모 애플리케이션, 예측 가능하고 강력한 디버깅이 필요할 때: Redux (Redux Toolkit 권장)
+        가볍고 사용하기 쉬운 솔루션, 적은 보일러플레이트: Zustand, Jotai
+        리액트의 최신 기능을 활용하고, 컴포넌트 간 효율적인 상태 공유가 필요할 때: Recoil
