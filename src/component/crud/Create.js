@@ -7,7 +7,7 @@ function Create(props){
         event.preventDefault(); //리로드 막음
         const title = event.target.title.value;
         // console.log(title)
-        const body = event.target.title.body;
+        const body = event.target.body.value;
         //props를 준 대상의 onCreate함수 호출
         props.onCreate(title, body); 
       }}>
